@@ -49,7 +49,7 @@ app.use(function (req, res, next) {
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 // Set up mongoose connection
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URI || mongoDB.dev_db_url;
 
 main().catch((err) => console.log(err));
 async function main() {
