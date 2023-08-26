@@ -53,7 +53,7 @@ const mongoDB = process.env.MONGODB_URI || mongoDB.dev_db_url;
 
 main().catch((err) => console.log(err));
 async function main() {
-  await mongoose.connect(mongoDB.dev_db_url);
+  await mongoose.connect(mongoDB);
 }
 
 // error handler
