@@ -1,3 +1,4 @@
+require("dotenv").config();
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -9,7 +10,6 @@ const { dev_db_url } = require("./dev_db_url");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const catalogRouter = require("./routes/catalog.js"); //Import routes for "catalog" area of site
-
 var app = express();
 
 // view engine setup
@@ -51,8 +51,7 @@ const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 // Set up mongoose connection
 
-const isDevelopment = process.env.NODE_ENV !== "production";
-const mongoDB = isDevelopment ? dev_db_url : process.env.MONGODB_URI;
+const mongoDB = process.env.MONGODB_URI || process.env.dev_db_url;
 
 main().catch((err) => console.log(err));
 async function main() {
