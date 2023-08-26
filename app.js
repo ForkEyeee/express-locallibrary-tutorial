@@ -56,6 +56,9 @@ main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
 }
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Server started on port", process.env.PORT || 3000);
+});
 
 // error handler
 app.use(function (err, req, res, next) {
