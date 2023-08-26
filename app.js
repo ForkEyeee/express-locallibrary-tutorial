@@ -6,7 +6,6 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const compression = require("compression");
 const helmet = require("helmet");
-const { dev_db_url } = require("./dev_db_url");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 const catalogRouter = require("./routes/catalog.js"); //Import routes for "catalog" area of site
