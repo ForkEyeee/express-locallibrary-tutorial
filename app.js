@@ -3,7 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-const compression = require("compression");
+// const compression = require("compression");
 const helmet = require("helmet");
 const dev_db_url = require("./dev_db_url");
 var indexRouter = require("./routes/index");
@@ -35,7 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(compression());
+// app.use(compression());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
